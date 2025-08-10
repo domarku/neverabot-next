@@ -1,28 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css');
 
-:root {
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 32px;
-  --spacing-xl: 64px;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
-.hidden {
-  display: none;
-}
-
-.shadow-red {
-  box-shadow: 0px 96px 128px -32px rgba(255, 6, 57, 0.5) !important;
-}
-
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -41,6 +18,31 @@ html {
   font-stretch: normal;
 }
 
+:root {
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+
+  font-family: 'Publico Text Mono Web Roman', monospace;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+.hidden {
+  display: none;
+}
+
+.shadow-red {
+  box-shadow: 0px 96px 128px -32px rgba(255, 6, 57, 0.5) !important;
+}
+
 .PublicoTextMono-Roman-Web, body {
   font-family: 'Publico Text Mono Web Roman', monospace;
   font-weight: 400;
@@ -48,19 +50,14 @@ html {
   font-stretch: normal;
 }
 
-.mono {
-  font-family: Monaco, "Lucida Console", monospace;
-  font-size: 10px;
-}
-
-.System, input[type=submit], button, nav, header, footer {
+.System, input[type=submit], button, nav, header, footer, .submit {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 600 !important;
 }
 
 body {
   background: url("/assets/img/bg-pattern.png") left top repeat;
-  background-size: 9px;
+  background-size: 8px;
   background-attachment: fixed;
   color: #272D2F;
   font-size: 15px;
@@ -126,13 +123,12 @@ select {
 
 input[type=submit], button {
   margin-bottom: 10.6666666667px;
-  padding: 14px var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
   border: 0;
-  border-radius: 2px;
+  border-radius: 12px;
   background-color: #0084ff;
   cursor: pointer;
   color: #FEFEFE;
-  font-size: 0.8rem;
 }
 
 input[type=submit]:hover, button:hover {
@@ -199,8 +195,8 @@ nav ul {
 }
 
 nav ul li {
-  float: left;
-  margin-right: var(--spacing-lg);
+  padding: 4px 16px;
+  width: 100%;
 }
 
 nav ul li::after {
@@ -211,6 +207,7 @@ nav ul li::after {
 nav ul li a {
   color: #272D2F;
   text-decoration: none;
+  cursor: pointer; 
 }
 
 nav ul li:nth-child(1) {
@@ -228,8 +225,10 @@ nav ul li:nth-child(3) {
 .paper {
   background-color: #ffffff;
   padding: var(--spacing-xl) var(--spacing-lg);
-  box-shadow: 0px 96px 128px -32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 96px 128px -32px rgba(0, 132, 255, 0.9);
   position: relative;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .paper::after {
@@ -440,14 +439,6 @@ header, footer {
   text-align: center;
 }
 
-header a, footer a {
-  color: #B3B3B3;
-}
-
-header a:hover, footer a:hover {
-  color: #272D2F;
-}
-
 header {
   margin-bottom: var(--spacing-lg);
   text-align: center;
@@ -465,9 +456,8 @@ header .alert p {
 }
 
 footer {
-  margin-top: var(--spacing-xl);
   text-align: center;
-  color: #B3B3B3;
+  color: #000;
   font-size: 0.8rem;
 }
 
@@ -524,7 +514,6 @@ footer {
   .paper {
     padding: var(--spacing-xl) var(--spacing-xl);
     margin: 0 auto;
-    max-width: 800px;
   }
   
   .paper .statement .checkboxes .date, .paper .about-body .checkboxes .date {
@@ -558,10 +547,10 @@ footer {
 
 @media screen and (min-width: 1024px) {
   .outer-container {
-    padding: var(--spacing-xl);
+    max-width: 768px;
   }
   
   .paper {
-    padding: var(--spacing-xl) 128px;
+    padding: var(--spacing-md) var(--spacing-xl);
   }
 }

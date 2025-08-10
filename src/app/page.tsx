@@ -328,7 +328,7 @@ export default function Home() {
       </div>
 
       <footer>
-        <p>© 2024 neverabot.org</p>
+        <p>© {new Date().getFullYear()} neverabot.org</p>
       </footer>
     </div>
   )
