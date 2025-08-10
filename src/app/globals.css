@@ -1,5 +1,12 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css');
 
+:root {
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -61,7 +68,7 @@ body {
 }
 
 h1 {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -119,7 +126,7 @@ select {
 
 input[type=submit], button {
   margin-bottom: 10.6666666667px;
-  padding: 14px 32px;
+  padding: 14px var(--spacing-lg);
   border: 0;
   border-radius: 2px;
   background-color: #0084ff;
@@ -142,23 +149,25 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label span {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: -2px 10px 0 0;
-  vertical-align: middle;
+  width: 26px;
+  height: 26px;
+  margin-right: var(--spacing-sm);
+
   background: url("/assets/img/check_radio_sheet.svg") left top no-repeat;
+  background-size: cover;
   cursor: pointer;
 }
 
 input[type="checkbox"]:checked + label span {
-  background: url("/assets/img/check_radio_sheet.svg") -20px top no-repeat;
+  background: url("/assets/img/check_radio_sheet.svg") -26px top no-repeat;
+  background-size: cover;
 }
 
-.label {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: -2px;
-}
+  .label {
+    display: inline-block;
+    position: relative;
+    top: calc(-1 * var(--spacing-sm));
+  }
 
 .error {
   color: #ff0000;
@@ -173,7 +182,7 @@ input[type="checkbox"]:checked + label span {
 }
 
 nav {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
   position: relative;
 }
 
@@ -191,12 +200,12 @@ nav ul {
 
 nav ul li {
   float: left;
-  margin-right: 32px;
+  margin-right: var(--spacing-lg);
 }
 
 nav ul li::after {
   content: "•";
-  margin-left: 32px;
+  margin-left: var(--spacing-lg);
 }
 
 nav ul li a {
@@ -205,11 +214,11 @@ nav ul li a {
 }
 
 nav ul li:nth-child(1) {
-  margin-right: 32px;
+  margin-right: var(--spacing-lg);
 }
 
 nav ul li:nth-child(2) {
-  margin-right: 32px;
+  margin-right: var(--spacing-lg);
 }
 
 nav ul li:nth-child(3) {
@@ -218,7 +227,7 @@ nav ul li:nth-child(3) {
 
 .paper {
   background-color: #ffffff;
-  padding: 64px 32px;
+  padding: var(--spacing-xl) var(--spacing-lg);
   box-shadow: 0px 96px 128px -32px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -230,11 +239,11 @@ nav ul li:nth-child(3) {
 }
 
 .paper h1 {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .paper .statement, .paper .about-body {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .paper .statement:last-child, .paper .about-body:last-child {
@@ -254,19 +263,19 @@ nav ul li:nth-child(3) {
 }
 
 .paper .statement .statement-body, .paper .about-body .statement-body {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .paper .statement .checkboxes, .paper .about-body .checkboxes {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .paper .statement .checkboxes .date, .paper .about-body .checkboxes .date {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .paper .statement .checkboxes .date p, .paper .about-body .checkboxes .date p {
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-sm);
 }
 
 .paper .statement .checkboxes .date p:nth-child(2), .paper .about-body .checkboxes .date p:nth-child(2) {
@@ -278,7 +287,7 @@ nav ul li:nth-child(3) {
 }
 
 .paper .statement .location, .paper .about-body .location {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .paper .statement .location:last-child, .paper .about-body .location:last-child {
@@ -290,7 +299,7 @@ nav ul li:nth-child(3) {
 }
 
 .paper .statement .fine-print, .paper .about-body .fine-print {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
   font-size: 0.8rem;
   color: #B3B3B3;
   line-height: 1.4;
@@ -301,7 +310,7 @@ nav ul li:nth-child(3) {
 }
 
 .paper .statement .submit, .paper .about-body .submit {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
   text-align: center;
 }
 
@@ -311,13 +320,13 @@ nav ul li:nth-child(3) {
 
 .paper .statement .submit span, .paper .about-body .submit span {
   display: block;
-  margin-top: 8px;
+  margin-top: var(--spacing-sm);
   font-size: 0.8rem;
   color: #B3B3B3;
 }
 
 .paper .about-body {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -327,7 +336,7 @@ nav ul li:nth-child(3) {
 }
 
 .paper .logo {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
   display: inline-block;
 }
 
@@ -345,15 +354,15 @@ nav ul li:nth-child(3) {
 }
 
 .paper .input-date {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .paper .subtitle {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .paper .articles {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .paper .articles:last-child {
@@ -361,7 +370,7 @@ nav ul li:nth-child(3) {
 }
 
 .paper .articles article {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
   display: block;
 }
 
@@ -370,7 +379,7 @@ nav ul li:nth-child(3) {
 }
 
 .paper .articles article h3, .paper .articles article p {
-  margin-bottom: 8px;
+  margin-bottom: var(--spacing-sm);
 }
 
 .paper .articles article h3 {
@@ -383,15 +392,15 @@ nav ul li:nth-child(3) {
 
 .paper .articles article img {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: var(--spacing-md);
 }
 
 .paper .signees {
-  margin-bottom: 64px;
+  margin-bottom: var(--spacing-xl);
 }
 
 .paper #search {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
   width: 100%;
 }
 
@@ -427,7 +436,7 @@ nav ul li:nth-child(3) {
 }
 
 header, footer {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
   text-align: center;
 }
 
@@ -440,15 +449,15 @@ header a:hover, footer a:hover {
 }
 
 header {
-  margin-bottom: 32px;
+  margin-bottom: var(--spacing-lg);
   text-align: center;
 }
 
 header .alert {
   background-color: #ff0000;
   color: #FEFEFE;
-  padding: 16px;
-  margin-bottom: 32px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 header .alert p {
@@ -456,7 +465,7 @@ header .alert p {
 }
 
 footer {
-  margin-top: 64px;
+  margin-top: var(--spacing-xl);
   text-align: center;
   color: #B3B3B3;
   font-size: 0.8rem;
@@ -503,17 +512,17 @@ footer {
 .outer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 16px;
+  padding: var(--spacing-lg) var(--spacing-md);
 }
 
 /* Responsive styles */
 @media screen and (min-width: 500px) {
   .outer-container {
-    padding: 32px;
+    padding: var(--spacing-lg);
   }
   
   .paper {
-    padding: 64px 64px;
+    padding: var(--spacing-xl) var(--spacing-xl);
     margin: 0 auto;
     max-width: 800px;
   }
@@ -521,7 +530,7 @@ footer {
   .paper .statement .checkboxes .date, .paper .about-body .checkboxes .date {
     float: left;
     width: 33.33%;
-    margin-right: 32px;
+    margin-right: var(--spacing-lg);
   }
   
   .paper .statement .checkboxes .date:last-child, .paper .about-body .checkboxes .date:last-child {
@@ -531,7 +540,7 @@ footer {
   .paper .statement .location, .paper .about-body .location {
     float: left;
     width: 33.33%;
-    margin-right: 32px;
+    margin-right: var(--spacing-lg);
   }
   
   .paper .statement .location:last-child, .paper .about-body .location:last-child {
@@ -543,16 +552,16 @@ footer {
   }
   
   .paper .about-body {
-    margin-bottom: 64px;
+    margin-bottom: var(--spacing-xl);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .outer-container {
-    padding: 64px;
+    padding: var(--spacing-xl);
   }
   
   .paper {
-    padding: 64px 128px;
+    padding: var(--spacing-xl) 128px;
   }
 }

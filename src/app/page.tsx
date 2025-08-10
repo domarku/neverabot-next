@@ -25,9 +25,10 @@ export default function Home() {
   useEffect(() => {
     const now = new Date()
     const day = now.getDate()
-    const month = now.getMonth() + 1
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const month = monthNames[now.getMonth()]
     const year = now.getFullYear()
-    setCurrentDate(`${day}/${month}/${year}`)
+    setCurrentDate(`${day} ${month} ${year}`)
   }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -285,34 +286,6 @@ export default function Home() {
             <div>
               <input
                 type="checkbox"
-                id="is-persisted"
-                name="isPersisted"
-                checked={formData.isPersisted}
-                onChange={handleInputChange}
-              />
-              <label htmlFor="is-persisted">
-                <span></span>
-                <div className="label">Include me in Who signed list</div>
-              </label>
-            </div>
-
-            <div id="is-public-checkbox" style={{ display: formData.isPersisted ? 'block' : 'none' }}>
-              <input
-                type="checkbox"
-                id="is-public"
-                name="isPublic"
-                checked={formData.isPublic}
-                onChange={handleInputChange}
-              />
-              <label htmlFor="is-public">
-                <span></span>
-                <div className="label">Show me as Anonymous</div>
-              </label>
-            </div>
-
-            <div>
-              <input
-                type="checkbox"
                 id="not-bot"
                 name="notBot"
                 checked={formData.notBot}
@@ -338,7 +311,7 @@ export default function Home() {
                 className="location-input"
                 id="location-input"
                 type="text"
-                placeholder="City"
+                placeholder="Place of residence"
                 value={formData.signedInCity}
                 onChange={handleInputChange}
               />
