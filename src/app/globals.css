@@ -1,42 +1,558 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css');
+
+html {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+.hidden {
+  display: none;
+}
+
+.shadow-red {
+  box-shadow: 0px 96px 128px -32px rgba(255, 6, 57, 0.5) !important;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@font-face {
+  font-family: 'Publico Text Mono Web Roman';
+  src: url("/assets/font/PublicoTextMono-Roman-Web.eot");
+  src: url("/assets/font/PublicoTextMono-Roman-Web.eot?#iefix") format("embedded-opentype"), url("/assets/font/PublicoTextMono-Roman-Web.woff2") format("woff2"), url("/assets/font/PublicoTextMono-Roman-Web.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.PublicoTextMono-Roman-Web, body {
+  font-family: 'Publico Text Mono Web Roman', monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.mono {
+  font-family: Monaco, "Lucida Console", monospace;
+  font-size: 10px;
+}
+
+.System, input[type=submit], button, nav, header, footer {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600 !important;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: url("/assets/img/bg-pattern.png") left top repeat;
+  background-size: 9px;
+  background-attachment: fixed;
+  color: #272D2F;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+h1 {
+  margin-bottom: 64px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400 !important;
+}
+
+.subhead {
+  font-size: 1.25rem;
+  position: relative;
 }
 
 a {
-  color: inherit;
+  text-decoration: none;
+  color: #0084ff;
+}
+
+a:hover {
+  border-bottom: 1px solid #0084ff;
+}
+
+a:visited {
+  color: #0084ff;
+}
+
+input[type=text], select {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #B3B3B3;
+  border-radius: 0;
+  background: #FEFEFE;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 500px) {
+  input[type=text], select {
+    margin-right: 5px;
+  }
+}
+
+input[type=text]:focus, select:focus {
+  border-bottom: 1px solid #0084ff !important;
+  outline-width: 0;
+}
+
+input[type=text] {
+  width: 180px;
+}
+
+select {
+  width: 280px;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
+input[type=submit], button {
+  margin-bottom: 10.6666666667px;
+  padding: 14px 32px;
+  border: 0;
+  border-radius: 2px;
+  background-color: #0084ff;
+  cursor: pointer;
+  color: #FEFEFE;
+  font-size: 0.8rem;
+}
+
+input[type=submit]:hover, button:hover {
+  background-color: #0073e6;
+}
+
+input[type=submit]:focus, button:focus {
+  outline-width: 0;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url("/assets/img/check_radio_sheet.svg") left top no-repeat;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+  background: url("/assets/img/check_radio_sheet.svg") -20px top no-repeat;
+}
+
+.label {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: -2px;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.error-text {
+  color: #ff0000;
+}
+
+.still-human {
+  color: #ff0000;
+}
+
+nav {
+  margin-bottom: 64px;
+  position: relative;
+}
+
+nav::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  float: left;
+  margin-right: 32px;
+}
+
+nav ul li::after {
+  content: "•";
+  margin-left: 32px;
+}
+
+nav ul li a {
+  color: #272D2F;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+nav ul li:nth-child(1) {
+  margin-right: 32px;
+}
+
+nav ul li:nth-child(2) {
+  margin-right: 32px;
+}
+
+nav ul li:nth-child(3) {
+  margin-right: 0;
+}
+
+.paper {
+  background-color: #ffffff;
+  padding: 64px 32px;
+  box-shadow: 0px 96px 128px -32px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.paper::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.paper h1 {
+  margin-bottom: 64px;
+}
+
+.paper .statement, .paper .about-body {
+  margin-bottom: 64px;
+}
+
+.paper .statement:last-child, .paper .about-body:last-child {
+  margin-bottom: 0;
+}
+
+.paper .statement #birthday, .paper .about-body #birthday {
+  width: 80px;
+}
+
+.paper .statement #birthmonth, .paper .about-body #birthmonth {
+  width: 120px;
+}
+
+.paper .statement #birthyear, .paper .about-body #birthyear {
+  width: 100px;
+}
+
+.paper .statement .statement-body, .paper .about-body .statement-body {
+  margin-bottom: 64px;
+}
+
+.paper .statement .checkboxes, .paper .about-body .checkboxes {
+  margin-bottom: 64px;
+}
+
+.paper .statement .checkboxes .date, .paper .about-body .checkboxes .date {
+  margin-bottom: 32px;
+}
+
+.paper .statement .checkboxes .date p, .paper .about-body .checkboxes .date p {
+  margin-bottom: 8px;
+}
+
+.paper .statement .checkboxes .date p:nth-child(2), .paper .about-body .checkboxes .date p:nth-child(2) {
+  font-weight: 600;
+}
+
+.paper .statement .checkboxes .date:last-child, .paper .about-body .checkboxes .date:last-child {
+  margin-bottom: 0;
+}
+
+.paper .statement .location, .paper .about-body .location {
+  margin-bottom: 32px;
+}
+
+.paper .statement .location:last-child, .paper .about-body .location:last-child {
+  margin-bottom: 0;
+}
+
+.paper .statement .location .location-input, .paper .about-body .location .location-input {
+  width: 100%;
+}
+
+.paper .statement .fine-print, .paper .about-body .fine-print {
+  margin-bottom: 64px;
+  font-size: 0.8rem;
+  color: #B3B3B3;
+  line-height: 1.4;
+}
+
+.paper .statement .fine-print:last-child, .paper .about-body .fine-print:last-child {
+  margin-bottom: 0;
+}
+
+.paper .statement .submit, .paper .about-body .submit {
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.paper .statement .submit:last-child, .paper .about-body .submit:last-child {
+  margin-bottom: 0;
+}
+
+.paper .statement .submit span, .paper .about-body .submit span {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #B3B3B3;
+}
+
+.paper .about-body {
+  margin-bottom: 64px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.paper .about-body:last-child {
+  margin-bottom: 0;
+}
+
+.paper .logo {
+  margin-bottom: 32px;
+  display: inline-block;
+}
+
+.paper .logo:hover {
+  cursor: pointer;
+}
+
+.paper .logo img {
+  width: 100px;
+}
+
+.paper .logo-hover {
+  background: url("/assets/img/neverabot-logo-hover.svg") left top no-repeat;
+  background-size: contain;
+}
+
+.paper .input-date {
+  margin-bottom: 32px;
+}
+
+.paper .subtitle {
+  margin-bottom: 32px;
+}
+
+.paper .articles {
+  margin-bottom: 64px;
+}
+
+.paper .articles:last-child {
+  margin-bottom: 0;
+}
+
+.paper .articles article {
+  margin-bottom: 32px;
+  display: block;
+}
+
+.paper .articles article:hover {
+  opacity: 0.8;
+}
+
+.paper .articles article h3, .paper .articles article p {
+  margin-bottom: 8px;
+}
+
+.paper .articles article h3 {
+  font-size: 1.1rem;
+}
+
+.paper .articles article p {
+  color: #B3B3B3;
+}
+
+.paper .articles article img {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.paper .signees {
+  margin-bottom: 64px;
+}
+
+.paper #search {
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #B3B3B3;
+}
+
+.tooltip:hover {
+  cursor: help;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #272D2F;
+  color: #FEFEFE;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+header, footer {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+header a, footer a {
+  color: #B3B3B3;
+}
+
+header a:hover, footer a:hover {
+  color: #272D2F;
+}
+
+header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+header .alert {
+  background-color: #ff0000;
+  color: #FEFEFE;
+  padding: 16px;
+  margin-bottom: 32px;
+}
+
+header .alert p {
+  margin: 0;
+}
+
+footer {
+  margin-top: 64px;
+  text-align: center;
+  color: #B3B3B3;
+  font-size: 0.8rem;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: none;
+  }
+  
+  nav, header, footer {
+    display: none;
+  }
+  
+  .paper {
+    background-color: #ffffff;
+    padding: 100px 60px;
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+  }
+  
+  .checkboxes {
+    display: none;
+  }
+  
+  .foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .foot div {
+    align-self: flex-start;
+    flex-grow: 1;
+    width: 33.33%;
+    flex-basis: 33.33%;
+  }
+}
+
+/* Outer container */
+.outer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 500px) {
+  .outer-container {
+    padding: 32px;
+  }
+  
+  .paper {
+    padding: 64px 64px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .paper .statement .checkboxes .date, .paper .about-body .checkboxes .date {
+    float: left;
+    width: 33.33%;
+    margin-right: 32px;
+  }
+  
+  .paper .statement .checkboxes .date:last-child, .paper .about-body .checkboxes .date:last-child {
+    margin-right: 0;
+  }
+  
+  .paper .statement .location, .paper .about-body .location {
+    float: left;
+    width: 33.33%;
+    margin-right: 32px;
+  }
+  
+  .paper .statement .location:last-child, .paper .about-body .location:last-child {
+    margin-right: 0;
+  }
+  
+  .paper .statement .submit, .paper .about-body .submit {
+    text-align: left;
+  }
+  
+  .paper .about-body {
+    margin-bottom: 64px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .outer-container {
+    padding: 64px;
+  }
+  
+  .paper {
+    padding: 64px 128px;
   }
 }
