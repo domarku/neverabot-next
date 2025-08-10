@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Never a Bot - Static Website
 
-## Getting Started
+A statically-generated website that allows users to sign a document declaring they don't want to be turned into a memorial chatbot after death.
 
-First, run the development server:
+## 🚀 Features
+
+- **Static Generation**: Built with Next.js and exported as static HTML
+- **Print Functionality**: Submit button opens a print dialog with a clean, PDF-style document
+- **Pure CSS**: No Tailwind or other CSS frameworks, just custom CSS
+- **Two Pages**: Sign page and About page with related articles
+- **No Database**: Completely static, no backend required
+- **Responsive Design**: Mobile-friendly layout
+
+## 📄 Pages
+
+1. **Sign Page** (`/`): Main form where users can fill out their declaration
+2. **About Page** (`/about`): Information about the project and related articles
+
+## 🛠️ Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is configured for static export and can be deployed to Vercel:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Vercel will automatically detect it's a Next.js project and build it
+4. The static files will be served from Vercel's CDN
 
-## Learn More
+### Manual Deployment
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Build the static site
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# The static files will be in the `out` directory
+# You can deploy these files to any static hosting service
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🖨️ Print Functionality
 
-## Deploy on Vercel
+When users click "Preview and print" on the sign page:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Form validation ensures all required fields are filled
+2. A new window opens with a clean HTML document
+3. The document is styled for printing (no navigation, clean layout)
+4. The browser's print dialog automatically opens
+5. Users can print or save as PDF
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles
+│   ├── layout.tsx           # Root layout
+│   ├── page.tsx             # Sign page
+│   └── about/
+│       └── page.tsx         # About page
+├── components/
+│   └── Navigation.tsx       # Navigation component
+public/
+├── assets/                  # Images, fonts, etc.
+└── favicon files
+```
+
+## 🎨 Design
+
+- **Custom Font**: Publico Text Mono Web Roman
+- **Background**: Subtle dot pattern
+- **Layout**: Paper-like design with shadow effects
+- **Colors**: Clean, minimal color scheme
+- **Typography**: Monospace font for that typewriter feel
+
+## 🔧 Configuration
+
+- **Next.js 15** with App Router
+- **TypeScript** for type safety
+- **Static Export** for deployment
+- **Unoptimized Images** for static generation
+
+## 📜 Original Project
+
+This is a refactored version of the original neverabot.org website, converted from an EJS-based dynamic site to a modern static Next.js application while preserving all functionality and design.
+
+## 📄 License
+
+This project maintains the same license and purpose as the original neverabot.org website.
+
+---
+
+**Never a bot** - Because your digital afterlife should be your choice.
