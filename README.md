@@ -10,6 +10,7 @@ A statically-generated website that allows users to sign a document declaring th
 - **Two Pages**: Sign page and About page with related articles
 - **No Database**: Completely static, no backend required
 - **Responsive Design**: Mobile-friendly layout
+- **Mapbox Integration**: Location autocomplete with city/country selection
 
 ## 📄 Pages
 
@@ -89,6 +90,16 @@ public/
 - **TypeScript** for type safety
 - **Static Export** for deployment
 - **Unoptimized Images** for static generation
+
+## 🗺️ Mapbox Setup
+
+This project uses Mapbox for location autocomplete. To set it up:
+
+1. Get a free Mapbox access token from [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
+2. Create a `.env.local` file in the root directory
+3. Add your token: `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_token_here`
+
+The free tier includes 100,000 geocoding requests per month.
 
 ## 📜 Original Project
 
