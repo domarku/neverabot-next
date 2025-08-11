@@ -1,7 +1,11 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { geocodeLocation, extractLocationData } from '@/lib/mapbox';
+import {
+  geocodeLocation,
+  extractLocationData,
+  type MapboxFeature,
+} from '@/lib/mapbox';
 
 interface LocationInputProps {
   value: string;
@@ -16,7 +20,7 @@ export default function LocationInput({
   onLocationSelect,
   placeholder = 'Enter city, country',
 }: LocationInputProps) {
-  const [suggestions, setSuggestions] = useState<any[]>([]);
+  const [suggestions, setSuggestions] = useState<MapboxFeature[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -49,7 +53,7 @@ export default function LocationInput({
   }, [value]);
 
   // Handle suggestion selection
-  const handleSuggestionClick = (suggestion: any) => {
+  const handleSuggestionClick = (suggestion: MapboxFeature) => {
     const { city, country } = extractLocationData(suggestion);
     onChange(suggestion.place_name);
     onLocationSelect(city, country);

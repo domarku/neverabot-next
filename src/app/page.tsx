@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '@/components/Navigation';
-import Image from 'next/image';
 import LocationInput from '@/components/LocationInput';
 import { getLocationFromIP } from '@/lib/geolocation';
 

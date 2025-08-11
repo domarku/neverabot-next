@@ -1,12 +1,27 @@
+// Mapbox API types
+interface MapboxContext {
+  id: string;
+  text: string;
+}
+
+export interface MapboxFeature {
+  place_name: string;
+  context?: MapboxContext[];
+}
+
+interface MapboxResponse {
+  features: MapboxFeature[];
+}
+
 // Mapbox configuration
 export const MAPBOX_ACCESS_TOKEN =
   process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || '';
 
 // Geocoding function
-export async function geocodeLocation(query: string) {
+export async function geocodeLocation(query: string): Promise<MapboxFeature[]> {
   if (!MAPBOX_ACCESS_TOKEN) {
     console.warn('Mapbox access token not found');
-    return null;
+    return [];
   }
 
   try {
@@ -20,7 +35,7 @@ export async function geocodeLocation(query: string) {
       throw new Error('Geocoding request failed');
     }
 
-    const data = await response.json();
+    const data: MapboxResponse = await response.json();
     return data.features || [];
   } catch (error) {
     console.error('Geocoding error:', error);
@@ -29,7 +44,10 @@ export async function geocodeLocation(query: string) {
 }
 
 // Extract city and country from geocoding result
-export function extractLocationData(feature: any) {
+export function extractLocationData(feature: MapboxFeature): {
+  city: string;
+  country: string;
+} {
   const context = feature.context || [];
   const placeName = feature.place_name || '';
 
@@ -38,8 +56,10 @@ export function extractLocationData(feature: any) {
   let country = '';
 
   // Try to extract from context first
-  const placeContext = context.find((ctx: any) => ctx.id.startsWith('place.'));
-  const countryContext = context.find((ctx: any) =>
+  const placeContext = context.find((ctx: MapboxContext) =>
+    ctx.id.startsWith('place.')
+  );
+  const countryContext = context.find((ctx: MapboxContext) =>
     ctx.id.startsWith('country.')
   );
 
