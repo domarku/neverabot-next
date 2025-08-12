@@ -6,6 +6,7 @@ import {
   extractLocationData,
   type MapboxFeature,
 } from '@/lib/mapbox';
+import { useAutoResize } from '@/hooks/useAutoResize';
 
 interface LocationInputProps {
   value: string;
@@ -26,6 +27,8 @@ export default function LocationInput({
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
+
+  const { width: inputWidth, measureRef } = useAutoResize(value, placeholder);
 
   // Debounced geocoding
   useEffect(() => {
@@ -114,6 +117,20 @@ export default function LocationInput({
       className="location-input-container"
       style={{ position: 'relative', display: 'inline-block' }}
     >
+      <span
+        ref={measureRef}
+        style={{
+          position: 'absolute',
+          visibility: 'hidden',
+          whiteSpace: 'nowrap',
+          fontSize: 'inherit',
+          fontFamily: 'inherit',
+          padding: '0',
+          margin: '0',
+          border: '0',
+        }}
+      />
+
       <input
         ref={inputRef}
         type="text"
@@ -124,9 +141,10 @@ export default function LocationInput({
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         style={{
-          width: '180px',
+          width: `${inputWidth}px`,
           display: 'inline-block',
           verticalAlign: 'baseline',
+          transition: 'width 0.2s ease',
         }}
         data-1p-ignore
       />

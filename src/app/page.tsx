@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '@/components/Navigation';
 import LocationInput from '@/components/LocationInput';
+import AutoResizeInput from '@/components/AutoResizeInput';
 import { getLocationFromIP } from '@/lib/geolocation';
 
 export default function Home() {
@@ -191,13 +192,18 @@ export default function Home() {
             )}
             <div className="statement-text">
               <span>I, </span>
-              <input
+              <AutoResizeInput
                 id="full-name"
                 type="text"
                 placeholder="Full name"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleInputChange}
+                minWidth={120}
+                style={{
+                  display: 'inline-block',
+                  verticalAlign: 'baseline',
+                }}
                 data-1p-ignore
               />
               <span>, born on </span>
@@ -247,7 +253,7 @@ export default function Home() {
           <div className="form-grid">
             <div className="grid-item signing-location">
               <label htmlFor="location-input">Location:</label>
-              <input
+              <AutoResizeInput
                 name="signedInCity"
                 className="location-input"
                 id="location-input"
@@ -255,6 +261,11 @@ export default function Home() {
                 placeholder="Place of residence"
                 value={formData.signedInCity}
                 onChange={handleInputChange}
+                minWidth={150}
+                style={{
+                  display: 'inline-block',
+                  verticalAlign: 'baseline',
+                }}
               />
             </div>
 

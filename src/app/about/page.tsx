@@ -17,31 +17,91 @@ export default function About() {
 
         <div className="statement">
           <p className="subhead">
-            Never a bot is a website that allows you to sign, download and share
-            a document that says you don&apos;t want to be turned into a{' '}
-            <span className="tooltip">
-              chatbot
-              <span className="tooltiptext">
-                Chatbot
-                <br />
-                — noun
-                <br />
-                a computer program which conducts a conversation via auditory or
-                textual methods [...] often designed to convincingly simulate
-                how a human would behave as a conversational partner, thereby
-                passing the Turing test.
-                <br />
-                (From Wikipedia, 22 November 2017)
-              </span>
-            </span>{' '}
-            after death.
+            Never a Bot is an interactive online and physical installation that
+            invites individuals to formally declare their refusal to be
+            digitally replicated after death.
           </p>
-          <p className="fine-print">
-            This project was part of an art installation at the Science Fiction
-            exhibition at the Technical Museum in Zagreb, Croatia in November
-            2016. Statements filled online were automatically printed to a
-            transparent box in the museum, as a physical representation of
-            interest in the subject.
+          <p>
+            The project centers on a downloadable, signable statement asserting
+            the right to prevent one&rsquo;s personal data — including messages,
+            emails, posts, and images — from being used to create artificial
+            intelligence chatbots or other posthumous digital simulations.
+          </p>
+          <p>
+            When it was first conceived in 2016, the statement referred only to
+            "chatbots," reflecting the language and technological landscape of
+            the time. In light of rapid advances in AI, the work&rsquo;s
+            implications now encompass a wider range of possible replications,
+            from voice and likeness models to generative identity simulations.
+          </p>
+          <p>
+            The idea emerged in response to an article in The Verge, on Eugenia
+            Kuyda, who built a chatbot using the archived communications of her
+            deceased friend. By translating that premise into an accessible,
+            opt-out format, Never a Bot engages with questions of privacy,
+            consent, and digital legacy in the age of intelligent systems.
+          </p>
+          <p>
+            The project debuted as part of the exhibition{' '}
+            <a
+              href="https://radiona.org/science-fiction-new-parallel-worlds/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Science Fiction – New Parallel Worlds
+            </a>{' '}
+            at the Nikola Tesla Technical Museum in Zagreb, Croatia, in November
+            2016, created by Ana Labudović and Dominik Markušić Gross. Online
+            submissions were automatically printed on paper slips and deposited
+            into a transparent box within the exhibition space, transforming
+            intangible digital choices into a visible accumulation of dissent.
+          </p>
+          <p>
+            By juxtaposing the ephemeral nature of online consent with a
+            tangible, accumulating record, Never a Bot invites reflection on the
+            persistence of personal data, the ethics of posthumous identity, and
+            the shifting boundaries between human memory and machine simulation.
+          </p>
+        </div>
+
+        <div className="privacy-policy">
+          <h3>Privacy Policy</h3>
+          <p>
+            Never a Bot is committed to protecting your privacy. This website
+            does not collect, store, or transmit any personal data.
+          </p>
+          <p>
+            No Data Collection: We do not store your name, location, birth date,
+            or any other information you enter on this site. All form
+            submissions are processed locally in your browser and result only in
+            a downloadable document.
+          </p>
+          <p>
+            No Tracking: We do not use cookies, analytics, or any tracking
+            technologies. Your visit to this site is completely anonymous.
+          </p>
+          <p>
+            No Server Storage: No data is sent to or stored on our servers. The
+            website operates entirely through your browser without any backend
+            data processing.
+          </p>
+          <p>
+            Third-Party Services: We use Mapbox for location autocomplete
+            functionality. While this service may receive your location queries,
+            we do not have access to or store any of this data.
+          </p>
+          <p>
+            IP-Based Geolocation: When you visit this site, we may use your IP
+            address to suggest your approximate location for the form&rsquo;s
+            location field. This is done through a third-party geolocation
+            service and is only used to pre-fill the location field for your
+            convenience. We do not store your IP address or the suggested
+            location data.
+          </p>
+          <p>
+            Your Rights: Since we don&rsquo;t collect any data, there&rsquo;s
+            nothing to access, modify, or delete. Your privacy is protected by
+            design.
           </p>
         </div>
       </div>
