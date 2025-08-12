@@ -29,10 +29,11 @@ export default function About() {
           </p>
           <p>
             When it was first conceived in 2016, the statement referred only to
-            "chatbots," reflecting the language and technological landscape of
-            the time. In light of rapid advances in AI, the work&rsquo;s
-            implications now encompass a wider range of possible replications,
-            from voice and likeness models to generative identity simulations.
+            &quot;chatbots,&quot; reflecting the language and technological
+            landscape of the time. In light of rapid advances in AI, the
+            work&rsquo;s implications now encompass a wider range of possible
+            replications, from voice and likeness models to generative identity
+            simulations.
           </p>
           <p>
             The idea emerged in response to an article in The Verge, on Eugenia
