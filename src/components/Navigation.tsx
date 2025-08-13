@@ -8,7 +8,7 @@ interface NavigationProps {
 
 export default function Navigation({ currentPage = 'home' }: NavigationProps) {
   const navItems = [
-    { href: '/', label: 'Sign', page: 'home' as const },
+    { href: '/', label: 'Statement', page: 'home' as const },
     { href: '/about', label: 'About', page: 'about' as const },
     { href: '/media', label: 'Media', page: 'media' as const },
   ];

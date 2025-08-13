@@ -93,7 +93,7 @@ export default function Home() {
     if (!formData.birthDate) newErrors.push('Birth Date');
     if (!formData.city) newErrors.push('City');
     if (!formData.country) newErrors.push('Country');
-    if (!formData.signedInCity) newErrors.push('Signing Location');
+    if (!formData.signedInCity) newErrors.push('Statement Location');
     if (!formData.notBot) newErrors.push('Bot verification');
 
     setErrors(newErrors);
@@ -150,7 +150,7 @@ export default function Home() {
                 <p>Location:<br>${formData.signedInCity}</p>
               </div>
               <div>
-                <p>Signature:<br>_____________</p>
+                <p>Statement Signature:<br>_____________</p>
               </div>
             </div>
           </div>

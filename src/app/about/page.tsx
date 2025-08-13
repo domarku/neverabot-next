@@ -36,11 +36,19 @@ export default function About() {
             simulations.
           </p>
           <p>
-            The idea emerged in response to an article in The Verge, on Eugenia
-            Kuyda, who built a chatbot using the archived communications of her
-            deceased friend. By translating that premise into an accessible,
-            opt-out format, Never a Bot engages with questions of privacy,
-            consent, and digital legacy in the age of intelligent systems.
+            The idea emerged in response to an article in{' '}
+            <a
+              href="https://www.theverge.com/a/luka-artificial-intelligence-memorial-roman-mazurenko-bot"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Verge
+            </a>
+            , on Eugenia Kuyda, who built a chatbot using the archived
+            communications of her deceased friend. By translating that premise
+            into an accessible, opt-out format, Never a Bot engages with
+            questions of privacy, consent, and digital legacy in the age of
+            intelligent systems.
           </p>
           <p>
             The project debuted as part of the exhibition{' '}
@@ -103,6 +111,16 @@ export default function About() {
             Your Rights: Since we don&rsquo;t collect any data, there&rsquo;s
             nothing to access, modify, or delete. Your privacy is protected by
             design.
+          </p>
+        </div>
+
+        <div className="contact-section">
+          <h3>Contact Us</h3>
+          <p>
+            For any inquiries, please contact us at{' '}
+            <a href="mailto:hello@neverabot.org">
+              {['hello', '@', 'neverabot.org'].join('')}
+            </a>
           </p>
         </div>
       </div>
