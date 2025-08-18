@@ -3,14 +3,18 @@
 import Link from 'next/link';
 
 interface NavigationProps {
-  currentPage?: 'home' | 'about' | 'media';
+  currentPage?: 'home' | 'about' | 'further-reading';
 }
 
 export default function Navigation({ currentPage = 'home' }: NavigationProps) {
   const navItems = [
     { href: '/', label: 'Statement', page: 'home' as const },
     { href: '/about', label: 'About', page: 'about' as const },
-    { href: '/media', label: 'Media', page: 'media' as const },
+    {
+      href: '/further-reading',
+      label: 'Further Reading',
+      page: 'further-reading' as const,
+    },
   ];
 
   // Reorder items so current page appears last

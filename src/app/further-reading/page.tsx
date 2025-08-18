@@ -7,9 +7,9 @@ import client from '@/lib/contentful';
 type ContentfulEntry = any;
 
 export const metadata = {
-  title: 'neverabot.org / Media',
+  title: 'neverabot.org / Further Reading',
   description:
-    'Media coverage and related stories about memorial chatbots and digital remains.',
+    'Further reading and related stories about memorial chatbots and digital remains.',
 };
 
 async function getArticles(): Promise<ContentfulEntry[]> {
@@ -25,16 +25,21 @@ async function getArticles(): Promise<ContentfulEntry[]> {
   }
 }
 
-export default async function Media() {
+export default async function FurtherReading() {
   const articles = await getArticles();
 
   return (
     <div className="outer-container">
-      <Navigation currentPage="media" />
+      <Navigation currentPage="further-reading" />
 
       <div className="paper">
         <div className="logo"></div>
-        <h2 className="subtitle">Media and Related Stories</h2>
+        <h2 className="subtitle">Further Reading</h2>
+        <p>
+          A curated collection of articles, essays, studies, works of fiction
+          and personal experiences on memory, legacy and the posthumous uses of
+          personal data.
+        </p>
 
         <div className="articles">
           {articles.map((article: ContentfulEntry) => (

@@ -27,6 +27,9 @@ export default function About() {
             emails, posts, and images — from being used to create artificial
             intelligence chatbots or other posthumous digital simulations.
           </p>
+
+          <img src="/assets/img/neverabot-2.jpg" alt="Never a Bot" />
+
           <p>
             When it was first conceived in 2016, the statement referred only to
             &quot;chatbots,&quot; reflecting the language and technological
@@ -65,6 +68,9 @@ export default function About() {
             into a transparent box within the exhibition space, transforming
             intangible digital choices into a visible accumulation of dissent.
           </p>
+
+          <img src="/assets/img/neverabot-4.gif" alt="Never a Bot" />
+
           <p>
             By juxtaposing the ephemeral nature of online consent with a
             tangible, accumulating record, Never a Bot invites reflection on the
